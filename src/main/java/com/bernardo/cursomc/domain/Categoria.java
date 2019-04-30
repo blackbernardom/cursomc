@@ -2,18 +2,30 @@ package com.bernardo.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+//entidade da classe
+@Entity
+
+
 //Classe implementada com serializable, e boa e importante para deixar vizivel, conversao de bites, transferencia de arquivos e de rede
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	
+	//definindo a geração estrategica dos Ids das categorias. Geração chave primaria
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	//criando variaveis
 	private Integer id;
 	private String nome;
 	
-	//criando os construtores das variaveis vazio
 	
+	//criando os construtores das variaveis vazio
 	public Categoria() {
 		
 	}
